@@ -17,59 +17,35 @@ Ensure you have the following installed:
 
 ## Project Structure
 
-ultrasound_probe_detection/ <br />
+![](results/screenshots/Screenshot%202025-03-31%20120958.png)
 
-├── dataset/ <br />
-
-│&ensp;&ensp;&ensp;└── dataset_yolo_format # dataset on which YOLO was finetuned <br />
-
-│&ensp;&ensp;&ensp; |&ensp;&ensp;&ensp; └── images # images folder which contains images spilt into training and validation set <br />
-
-│ &ensp;&ensp;&ensp;|&ensp;&ensp;&ensp; |&ensp;&ensp;&ensp; └── train <br />
-
-│ &ensp;&ensp;&ensp;|&ensp;&ensp;&ensp; |&ensp;&ensp;&ensp; └── val <br />
-
-│ &ensp;&ensp;&ensp;|&ensp;&ensp;&ensp; └── labels # labels folder which contains the corresponding labels for the images, split into training and validation set <br />
-
-│ &ensp;&ensp;&ensp;|&ensp;&ensp;&ensp; |&ensp;&ensp;&ensp; └── train <br />
-
-│ &ensp;&ensp;&ensp;|&ensp;&ensp;&ensp; |&ensp;&ensp;&ensp; └── val <br />
-
-├── src/ <br/>
-
-│ &ensp;&ensp;&ensp;└── video_test.py # main test script <br/>
-
-|&ensp;&ensp;&ensp; └── evaluate.py <br/>
-
-| &ensp;&ensp;&ensp;└── finetune_YOLOV8.py <br/>
-
-| &ensp;&ensp;&ensp;└── m2cai16.yaml <br/>
-
-├── videos/# Directory for input videos (e.g., surgery.mp4) <br/>
-
-| &ensp;&ensp;&ensp;└── surgery.mp4 <br/>
-
-| &ensp;&ensp;&ensp;└── video2.mp4 <br/>
-
-| &ensp;&ensp;&ensp;└── video3.mp4 <br/>
-
-├── model/ <br/>
-
-│ &ensp;&ensp;&ensp;└── yolo_v8_n_finetuned/ <br/>
-
-│&ensp;&ensp;&ensp; └── weights/ <br/>
-
-│&ensp;&ensp;&ensp; └── best.pt # Default fine-tuned YOLOv8s model <br/>
-
-├── results/ # Output directory for processed videos <br/>
-
-| &ensp;&ensp;&ensp;└── surgery_result.mp4 <br/>
-
-| &ensp;&ensp;&ensp;└── screenshots # folder to keep the screenshots
-
-| &ensp;&ensp;&ensp;| &ensp;&ensp;&ensp;└── screenshot.png
-
-└── README.md <br/>
+<!-- ultrasound_probe_detection/ 
+├── dataset/ 
+│   └── dataset_yolo_format        # dataset on which YOLO was finetuned 
+│   |   └── images                 # images folder which contains images spilt into training and validation set 
+│   |   |   └── train 
+│   |   |   └── val 
+│   |   └── labels                 # labels folder which contains the corresponding labels for the images, split into training and validation set 
+│   |   |   └── train 
+│   |   |   └── val 
+├── src/ 
+│   └── video_test.py              # main test script 
+|   └── evaluate.py 
+|   └── finetune_YOLOV8.py 
+|   └── m2cai16.yaml 
+├── videos/                        # Directory for input videos (e.g., surgery.mp4) 
+|   └── surgery.mp4 
+|   └── video2.mp4 
+|   └── video3.mp4 
+├── model/ 
+│   └── yolo_v8_n_finetuned/ 
+│   └── weights/ 
+│   └── best.pt                   # Default fine-tuned YOLOv8s model 
+├── results/                      # Output directory for processed videos 
+|   └── surgery_result.mp4 
+|   └── screenshots               # folder to keep the screenshots
+|   |   └── screenshot.png
+└── README.md  -->
 
 
 ## Installation
