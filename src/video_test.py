@@ -156,8 +156,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--output-dir",
         type=str,
-        default="result",
-        help="Directory to save the output video (default: result)",
+        default="results",
+        help="Directory to save the output video (default: results)",
     )
     parser.add_argument(
         "--model-path",

@@ -16,41 +16,72 @@ Ensure you have the following installed:
 - Model Weights: The default model is a fine-tuned YOLOv8s located at `../model/yolo_v8_n_finetuned/weights/best.pt` relative to the script. You can use your own model by specifying its path.
 
 ## Project Structure
-ultrasound_probe_detection/                                                                                                                             <br />
-├── dataset/                                                                                                                                            <br />
-│   └── dataset_yolo_format     # dataset on which YOLO was finetuned                                                                                   <br />
-│   |   └── images              # images folder which contains images spilt into training and validation set                                            <br />
-│   |   |   └── train                                                                                                                                   <br />
-│   |   |   └── val                                                                                                                                     <br />
-│   |   └── labels              # labels folder which contains the corresponding labels for the images, split into training and validation set          <br />
-│   |   |   └── train                                                                                                                                   <br />
-│   |   |   └── val                                                                                                                                     <br /> 
-├── src/                                                                                                                                                <br/>    
-│   └── video_test.py           # main test script                                                                                                      <br/>
-|   └── evaluate.py                                                                                                                                     <br/>
-|   └── finetune_YOLOV8.py  <br/>
-|   └── m2cai16.yaml       <br/>
-├── videos/                     # Directory for input videos (e.g., surgery.mp4) <br/>
-|   └── surgery.mp4 <br/>
-|   └── video2.mp4 <br/>
-|   └── video3.mp4 <br/>
+
+ultrasound_probe_detection/ <br />
+
+├── dataset/ <br />
+
+│&ensp;&ensp;&ensp;└── dataset_yolo_format # dataset on which YOLO was finetuned <br />
+
+│&ensp;&ensp;&ensp; |&ensp;&ensp;&ensp; └── images # images folder which contains images spilt into training and validation set <br />
+
+│ &ensp;&ensp;&ensp;|&ensp;&ensp;&ensp; |&ensp;&ensp;&ensp; └── train <br />
+
+│ &ensp;&ensp;&ensp;|&ensp;&ensp;&ensp; |&ensp;&ensp;&ensp; └── val <br />
+
+│ &ensp;&ensp;&ensp;|&ensp;&ensp;&ensp; └── labels # labels folder which contains the corresponding labels for the images, split into training and validation set <br />
+
+│ &ensp;&ensp;&ensp;|&ensp;&ensp;&ensp; |&ensp;&ensp;&ensp; └── train <br />
+
+│ &ensp;&ensp;&ensp;|&ensp;&ensp;&ensp; |&ensp;&ensp;&ensp; └── val <br />
+
+├── src/ <br/>
+
+│ &ensp;&ensp;&ensp;└── video_test.py # main test script <br/>
+
+|&ensp;&ensp;&ensp; └── evaluate.py <br/>
+
+| &ensp;&ensp;&ensp;└── finetune_YOLOV8.py <br/>
+
+| &ensp;&ensp;&ensp;└── m2cai16.yaml <br/>
+
+├── videos/# Directory for input videos (e.g., surgery.mp4) <br/>
+
+| &ensp;&ensp;&ensp;└── surgery.mp4 <br/>
+
+| &ensp;&ensp;&ensp;└── video2.mp4 <br/>
+
+| &ensp;&ensp;&ensp;└── video3.mp4 <br/>
+
 ├── model/ <br/>
-│   └── yolo_v8_n_finetuned/ <br/>
-│       └── weights/ <br/>
-│           └── best.pt         # Default fine-tuned YOLOv8s model <br/>
-├── results/                    # Output directory for processed videos <br/>
-|   └── surgery_result.mp4 <br/>
-|   └── screenshots             # folder to keep the screenshots
-|   |   └── screenshot.png
-└── README.md             <br/>
+
+│ &ensp;&ensp;&ensp;└── yolo_v8_n_finetuned/ <br/>
+
+│&ensp;&ensp;&ensp; └── weights/ <br/>
+
+│&ensp;&ensp;&ensp; └── best.pt # Default fine-tuned YOLOv8s model <br/>
+
+├── results/ # Output directory for processed videos <br/>
+
+| &ensp;&ensp;&ensp;└── surgery_result.mp4 <br/>
+
+| &ensp;&ensp;&ensp;└── screenshots # folder to keep the screenshots
+
+| &ensp;&ensp;&ensp;| &ensp;&ensp;&ensp;└── screenshot.png
+
+└── README.md <br/>
 
 
 ## Installation
 1. Clone or download this repository to your local machine:
+```
 git clone <repository-url>
 cd inSyteBio_project
+```
 2. Install the required Python packages:
+```
 pip install -r requirements.txt
+```
 3. Place your input video (e.g., surgery.mp4) in the `videos/` directory
 4. Ensure the default model (`../model/yolo_v8_n_finetuned/weights/best.pt`) exists, or provide your own model weights
 
@@ -59,22 +90,26 @@ Run the script from the `src/` directory using the command-line arguments.
 
 ### Basic Command (Using Default Model)
 To process a video with the default fine-tuned YOLOv8s model:
+```
 cd src
 python video_test.py --input-video "../videos/surgery.mp4" --output-file "surgery_result.mp4"
+```
 
-Output will be saved to `src/result/surgery_result.mp4`.
+Output will be saved to `src/results/surgery_result.mp4`.
 
 ### Custom Output Directory
 Specify a different output directory:
-
+```
 python video_test.py --input-video "../videos/surgery.mp4" --output-file "surgery_result.mp4" --output-dir "../results"
+```
 
 Output will be saved to `../results/surgery_result.mp4`.
 
 ### Using a Custom Model
 To use your own YOLO model instead of the default fine-tuned YOLOv8s:
-
+```
 python video_test.py --input-video "../videos/surgery.mp4" --output-file "surgery_result.mp4" --model-path "path/to/your/model.pt"
+```
 Replace `path/to/your/model.pt` with the path to your custom YOLO model weights.
 
 ## Command-Line Arguments
@@ -86,8 +121,9 @@ Replace `path/to/your/model.pt` with the path to your custom YOLO model weights.
 | `--model-path`     | Path to the YOLO model weights                    | No       | `../model/yolo_v8_n_finetuned/weights/best.pt` |
 
 ## Example with Absolute Paths
+```
 python video_test.py --input-video "absolute_path_of_video.mp4" --output-file "output_file_name" --output-dir "absolute_path_of_output_directory" --model-path "absolute_path_of_model_weight.pt_file"
-
+```
 
 ## Model Details
 - **Default Model:** Fine-tuned YOLOv8s (`best.pt`) located at `../model/yolo_v8_n_finetuned/weights/best.pt`
