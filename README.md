@@ -16,31 +16,33 @@ Ensure you have the following installed:
 - Model Weights: The default model is a fine-tuned YOLOv8s located at `../model/yolo_v8_n_finetuned/weights/best.pt` relative to the script. You can use your own model by specifying its path.
 
 ## Project Structure
-ultrasound_probe_detection/
-├── dataset/
-│   └── dataset_yolo_format     # dataset on which YOLO was finetuned
-│   |   └── images              # images folder which contains images spilt into training and validation set
-│   |   |   └── train
-│   |   |   └── val
-│   |   └── labels              # labels folder which contains the corresponding labels for the images, split into training and validation set 
-│   |   |   └── train
-│   |   |   └── val
-├── src/
-│   └── video_test.py           # main test script
-|   └── evaluate.py
-|   └── finetune_YOLOV8.py
-|   └── m2cai16.yaml       
-├── videos/                     # Directory for input videos (e.g., surgery.mp4)
-|   └── surgery.mp4
-|   └── video2.mp4
-|   └── video3.mp4
-├── model/
-│   └── yolo_v8_n_finetuned/
-│       └── weights/
-│           └── best.pt         # Default fine-tuned YOLOv8s model
-├── results/                    # Output directory for processed videos
-|   └── surgery_result.mp4
-└── README.md             
+ultrasound_probe_detection/                                                                                                                             <br />
+├── dataset/                                                                                                                                            <br />
+│   └── dataset_yolo_format     # dataset on which YOLO was finetuned                                                                                   <br />
+│   |   └── images              # images folder which contains images spilt into training and validation set                                            <br />
+│   |   |   └── train                                                                                                                                   <br />
+│   |   |   └── val                                                                                                                                     <br />
+│   |   └── labels              # labels folder which contains the corresponding labels for the images, split into training and validation set          <br />
+│   |   |   └── train                                                                                                                                   <br />
+│   |   |   └── val                                                                                                                                     <br /> 
+├── src/                                                                                                                                                <br/>    
+│   └── video_test.py           # main test script                                                                                                      <br/>
+|   └── evaluate.py                                                                                                                                     <br/>
+|   └── finetune_YOLOV8.py  <br/>
+|   └── m2cai16.yaml       <br/>
+├── videos/                     # Directory for input videos (e.g., surgery.mp4) <br/>
+|   └── surgery.mp4 <br/>
+|   └── video2.mp4 <br/>
+|   └── video3.mp4 <br/>
+├── model/ <br/>
+│   └── yolo_v8_n_finetuned/ <br/>
+│       └── weights/ <br/>
+│           └── best.pt         # Default fine-tuned YOLOv8s model <br/>
+├── results/                    # Output directory for processed videos <br/>
+|   └── surgery_result.mp4 <br/>
+|   └── screenshots             # folder to keep the screenshots
+|   |   └── screenshot.png
+└── README.md             <br/>
 
 
 ## Installation
@@ -96,6 +98,11 @@ Processed video includes:
 - Green bounding boxes with confidence scores and class labels
 - Orientation labels (Horizontal, Vertical, Diagonal)
 - Saved to specified `--output-dir` with `--output-file` name
+
+## Screenshot
+Below is a screenshot of the output video with annotations:
+![Output Screenshot](results/screenshots/Screenshot%202025-03-31%20114806.png)
+![Output Screenshot](results/screenshots/Screenshot%202025-03-31%20114839.png)
 
 ## Troubleshooting
 - "Could not open input video": Verify `--input-video` path
