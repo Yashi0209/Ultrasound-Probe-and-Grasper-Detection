@@ -1,18 +1,19 @@
 import torch
 from ultralytics import YOLO
-import wandb
-from wandb.integration.ultralytics import add_wandb_callback
+
+# import wandb
+# from wandb.integration.ultralytics import add_wandb_callback
 
 
-def on_fit_epoch_end(trainer):
-    """Log metrics at the end of each epoch"""
-    wandb.log({**trainer.lr, **trainer.metrics})
+# def on_fit_epoch_end(trainer):
+#     """Log metrics at the end of each epoch"""
+#     wandb.log({**trainer.lr, **trainer.metrics})
 
 
 def main():
     # Step 1: Check if GPU is available
     # wandb.login('f1c13300f3ca4d9a8ee070013702b288cedeb55e')
-    run = wandb.init(project="yolo", name="m2cai16_tool_sgd2", job_type="training")
+    # run = wandb.init(project="yolo", name="m2cai16_tool_sgd2", job_type="training")
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Using device: {device}")
@@ -23,7 +24,7 @@ def main():
     #     "E:/Ayushi/object_detection/runs/detect/m2cai16_tool_old_v2.03/weights/best.pt"
     # ).to(device)
 
-    model.add_callback("on_fit_epoch_end", on_fit_epoch_end)
+    # model.add_callback("on_fit_epoch_end", on_fit_epoch_end)
 
     # Step 3: Fine-tune the model with explicit GPU usage
     model.train(
@@ -43,7 +44,7 @@ def main():
     )
 
     print("Training completed.")
-    wandb.finish()
+    # wandb.finish()
 
 
 if __name__ == "__main__":
