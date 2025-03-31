@@ -17,9 +17,9 @@ Ensure you have the following installed:
 
 ## Project Structure
 
-![](results/screenshots/Screenshot%202025-03-31%20120958.png)
+![](results/screenshots/Screenshot%202025-03-31%20121358.png)
 
-<!-- ultrasound_probe_detection/ 
+<!-- inSyteBio_project/ 
 ├── dataset/ 
 │   └── dataset_yolo_format        # dataset on which YOLO was finetuned 
 │   |   └── images                 # images folder which contains images spilt into training and validation set 
