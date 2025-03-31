@@ -10,7 +10,7 @@ This project uses a YOLOv8 model to detect ultrasound probes and graspers in vid
 
 ## Prerequisites
 Ensure you have the following installed:
-- Python 3.8+
+- Python 3.12+
 - Dependencies (install via pip).
 - Input Video: A video file (e.g., surgery.mp4) to process
 - Model Weights: The default model is a fine-tuned YOLOv8s located at `../model/yolo_v8_n_finetuned/weights/best.pt` relative to the script. You can use your own model by specifying its path.
