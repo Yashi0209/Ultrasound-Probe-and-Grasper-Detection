@@ -1,0 +1,8 @@
+path: E:\Ayushi\object_detection\dataset_v4  # Replace with the absolute path to 'dataset'
+train: images/train
+val: images/val
+test: images/test
+# nc: 7
+# names: ['Grasper', 'Bipolar', 'Hook', 'Scissors', 'Clipper', 'Irrigator', 'SpecimenBag']
+nc: 6
+names: ['Grasper', 'irrigator', 'hook', 'bipolar', 'clipper', 'UltrasoundProbe']
